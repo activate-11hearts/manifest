@@ -1,0 +1,6 @@
+# Private client data (bookings, orders, session journal) — never commit
+data/
+
+# Python
+__pycache__/
+*.pyc

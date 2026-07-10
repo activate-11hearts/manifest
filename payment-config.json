@@ -1,0 +1,16 @@
+{
+  "_help": "Paste your keys below to switch from demo mode to live payments. Stripe keys: dashboard.stripe.com -> Developers -> API keys. PayPal client id: developer.paypal.com -> Apps & Credentials. Prices are in whole dollars; set a painting/meditation price to 0 to show 'inquire' instead of a Buy button.",
+  "currency": "usd",
+  "stripe_publishable_key": "",
+  "stripe_secret_key": "",
+  "paypal_client_id": "AbeeoReo-01xdVfnlTDKJfqiGaw6rw7qZiE0P225xO2r19ns6Mp_NMPiGPwyjiqvzgzQGYnLfzQ5RQ7Z",
+  "session_prices": {
+    "Introductory Session — 45 min": 75,
+    "Full Session — 75 min": 150,
+    "Series of Four — 4 × 75 min": 500
+  },
+  "painting_default_price": 0,
+  "painting_prices": {},
+  "meditation_default_price": 0,
+  "meditation_prices": {}
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manifest — Healing · Art · Stillness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand" data-nav="home">
+    <span class="brand-mark">✦</span>
+    <span class="brand-name">Manifest</span>
+  </div>
+  <nav class="nav">
+    <button class="nav-link active" data-nav="home">Home</button>
+    <button class="nav-link" data-nav="trinfinity">Trinfinity8</button>
+    <button class="nav-link" data-nav="gallery">Gallery</button>
+    <button class="nav-link" data-nav="meditations">Meditations</button>
+    <button class="nav-link nav-studio" data-nav="studio">Studio</button>
+  </nav>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="view-home" class="view active">
+  <section class="hero">
+    <p class="hero-eyebrow">A sanctuary for body, eye, and breath</p>
+    <h1>Healing, art &amp; stillness<br><em>in one place</em></h1>
+    <p class="hero-sub">Manifest brings together Trinfinity8 energy sessions, original paintings,
+    and guided meditations — three paths to the same quiet center.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" data-nav="trinfinity">Book a session</button>
+      <button class="btn btn-ghost" data-nav="meditations">Listen &amp; breathe</button>
+    </div>
+  </section>
+
+  <section class="home-cards">
+    <div class="home-card" data-nav="trinfinity">
+      <div class="home-card-icon">◉</div>
+      <h3>Trinfinity8 Healing</h3>
+      <p>Algorithmic frequency sessions for deep relaxation and rejuvenation, guided in person.</p>
+      <span class="home-card-link">Explore sessions →</span>
+    </div>
+    <div class="home-card" data-nav="gallery">
+      <div class="home-card-icon">❋</div>
+      <h3>The Gallery</h3>
+      <p>Original paintings born from the same intention — color as a doorway to calm.</p>
+      <span class="home-card-link">View the collection →</span>
+    </div>
+    <div class="home-card" data-nav="meditations">
+      <div class="home-card-icon">☾</div>
+      <h3>Guided Meditations</h3>
+      <p>Recorded journeys you can return to anytime — before sleep, after sessions, whenever you need.</p>
+      <span class="home-card-link">Press play →</span>
+    </div>
+  </section>
+</main>
+
+<!-- ============ TRINFINITY8 ============ -->
+<main id="view-trinfinity" class="view">
+  <section class="page-head">
+    <p class="hero-eyebrow">Energy · Frequency · Renewal</p>
+    <h1>Trinfinity8 Healing Sessions</h1>
+    <p class="page-lede">Trinfinity8 is a gentle, non-invasive rejuvenation technology developed by
+    Dr. Kathy Forti. During a session you simply relax while holding quartz crystal transmitters,
+    as mathematically encoded frequency programs run — designed to support deep relaxation,
+    balance, and a renewed sense of wellbeing.</p>
+    <p class="page-lede">Sessions are offered <strong>in person at the studio — and remotely,
+    wherever you are in the world</strong>. Energy knows no distance. In a remote session you
+    simply rest comfortably at home at your appointed time while your chosen programs are run
+    with the same care and intention, and many clients find the experience just as deep.</p>
+  </section>
+
+  <section class="offerings">
+    <div class="offer-card">
+      <h3>Introductory Session</h3>
+      <p class="offer-time">45 minutes</p>
+      <p>A gentle first experience. We choose one program together and you rest into it.</p>
+      <p class="offer-price" data-offering="Introductory Session — 45 min"></p>
+    </div>
+    <div class="offer-card offer-featured">
+      <h3>Full Session</h3>
+      <p class="offer-time">75 minutes</p>
+      <p>A complete journey: consultation, a tailored sequence of programs, and quiet integration time.</p>
+      <p class="offer-price" data-offering="Full Session — 75 min"></p>
+    </div>
+    <div class="offer-card">
+      <h3>Series of Four</h3>
+      <p class="offer-time">4 × 75 minutes</p>
+      <p>Weekly sessions that build on each other for deeper, lasting shifts.</p>
+      <p class="offer-price" data-offering="Series of Four — 4 × 75 min"></p>
+    </div>
+  </section>
+  <p class="offerings-note">✦ Every session is available in person or remote — you choose when booking.</p>
+
+  <section class="booking">
+    <h2>Request a session</h2>
+    <p class="muted">Share your details and preferred time — you'll receive a personal confirmation.</p>
+    <form id="booking-form" class="form-grid">
+      <label>Your name<input name="name" required placeholder="Full name"></label>
+      <label>Email<input name="email" type="email" required placeholder="you@example.com"></label>
+      <label>Phone (optional)<input name="phone" placeholder="+1 …"></label>
+      <label>Session
+        <select name="offering">
+          <option>Introductory Session — 45 min</option>
+          <option selected>Full Session — 75 min</option>
+          <option>Series of Four — 4 × 75 min</option>
+        </select>
+      </label>
+      <label>Session type
+        <select name="mode">
+          <option>In person</option>
+          <option>Remote (from home)</option>
+        </select>
+      </label>
+      <label>Preferred date &amp; time<input name="preferred" placeholder="e.g. Friday afternoon, or July 18 at 3pm"></label>
+      <label class="form-wide">Anything you'd like me to know?<textarea name="notes" rows="3" placeholder="Intentions, questions, or anything on your mind…"></textarea></label>
+      <div class="form-wide">
+        <button class="btn btn-primary" type="submit">Send booking request</button>
+        <span id="booking-msg" class="form-msg"></span>
+      </div>
+    </form>
+  </section>
+
+  <p class="fineprint">Trinfinity8 sessions are offered for relaxation and wellbeing.
+  They are not a substitute for medical diagnosis or treatment.</p>
+</main>
+
+<!-- ============ GALLERY ============ -->
+<main id="view-gallery" class="view">
+  <section class="page-head">
+    <p class="hero-eyebrow">Original works</p>
+    <h1>The Gallery</h1>
+    <p class="page-lede">Each painting begins the way a session does — with stillness.
+    Originals and prints are available; ask about any piece when you visit.</p>
+  </section>
+  <section id="gallery-grid" class="gallery-grid"></section>
+  <div id="gallery-empty" class="empty-state" hidden>
+    <div class="empty-icon">❋</div>
+    <h3>The gallery awaits its first painting</h3>
+    <p>Drop image files (JPG, PNG, WebP…) into the <code>paintings</code> folder
+    next to the app, then refresh this page. Each file becomes a gallery piece,
+    titled from its filename.</p>
+  </div>
+</main>
+
+<!-- checkout modal -->
+<div id="checkout" class="checkout-overlay" hidden>
+  <div class="checkout-card">
+    <button class="checkout-close" aria-label="Close">×</button>
+    <p class="hero-eyebrow">Checkout</p>
+    <h3 id="checkout-item"></h3>
+    <p id="checkout-amount" class="checkout-amount"></p>
+    <div id="checkout-demo-note" class="checkout-demo-note" hidden>
+      Payments are in <strong>demo mode</strong> — no real money moves until
+      Stripe or PayPal keys are added to <code>payment-config.json</code>.
+    </div>
+    <div class="checkout-methods">
+      <button id="pay-stripe" class="btn btn-primary" hidden>Pay with card (Stripe)</button>
+      <div id="paypal-buttons"></div>
+      <button id="pay-demo" class="btn btn-primary" hidden>Simulate payment (demo)</button>
+    </div>
+    <p id="checkout-msg" class="form-msg"></p>
+  </div>
+</div>
+
+<!-- payment result banner -->
+<div id="pay-banner" class="pay-banner" hidden></div>
+
+<!-- lightbox -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lightbox-close" aria-label="Close">×</button>
+  <img id="lightbox-img" alt="">
+  <p id="lightbox-title"></p>
+</div>
+
+<!-- ============ MEDITATIONS ============ -->
+<main id="view-meditations" class="view">
+  <section class="page-head">
+    <p class="hero-eyebrow">Close your eyes</p>
+    <h1>Guided Meditations</h1>
+    <p class="page-lede">Recorded journeys to accompany you between sessions.
+    Find a comfortable seat, soften your gaze, and press play.</p>
+  </section>
+  <section id="meditation-list" class="meditation-list"></section>
+  <div id="meditations-empty" class="empty-state" hidden>
+    <div class="empty-icon">☾</div>
+    <h3>New meditations are on their way</h3>
+    <p>Guided journeys are being recorded in the studio right now.
+    <a class="inquire" href="mailto:activate@11heartsfrequency.org?subject=Tell%20me%20when%20the%20meditations%20are%20ready">Email me</a>
+    and you'll be the first to know when they arrive.</p>
+  </div>
+</main>
+
+<!-- ============ STUDIO (practitioner) ============ -->
+<main id="view-studio" class="view">
+  <section class="page-head">
+    <p class="hero-eyebrow">Private — for the practitioner</p>
+    <h1>The Studio</h1>
+  </section>
+
+  <div id="studio-lock" class="studio-panel studio-lock" hidden>
+    <h2>The Studio is locked</h2>
+    <p class="muted">This area is private. Enter your practitioner PIN to continue.</p>
+    <form id="pin-form" class="pin-form">
+      <input type="password" id="pin-input" placeholder="PIN" autocomplete="off">
+      <button class="btn btn-primary" type="submit">Unlock</button>
+    </form>
+    <p id="pin-msg" class="form-msg"></p>
+  </div>
+
+  <div id="studio-content">
+  <div class="studio-grid">
+    <!-- bookings -->
+    <section class="studio-panel">
+      <h2>Booking requests</h2>
+      <div id="bookings-list"></div>
+      <h2 class="mt">Payments received</h2>
+      <div id="orders-list"></div>
+    </section>
+
+    <!-- timer + log form -->
+    <section class="studio-panel">
+      <h2>Session timer</h2>
+      <div class="timer">
+        <div id="timer-display" class="timer-display">00:00</div>
+        <div class="timer-controls">
+          <button id="timer-start" class="btn btn-primary">Start</button>
+          <button id="timer-pause" class="btn btn-ghost">Pause</button>
+          <button id="timer-reset" class="btn btn-ghost">Reset</button>
+        </div>
+      </div>
+
+      <h2 class="mt">Log a session</h2>
+      <form id="session-form" class="form-grid form-compact">
+        <label>Date<input name="date" type="date"></label>
+        <label>Client<input name="client" placeholder="Name (or 'self')"></label>
+        <label>Program(s) used<input name="program" placeholder="e.g. Rejuvenation, Stress Relief"></label>
+        <label>Minutes<input name="minutes" type="number" min="0" max="600" placeholder="75"></label>
+        <label>How did it feel? (1–5)
+          <select name="feeling">
+            <option value="0">—</option>
+            <option value="1">1 · heavy</option>
+            <option value="2">2</option>
+            <option value="3">3 · neutral</option>
+            <option value="4">4</option>
+            <option value="5">5 · radiant</option>
+          </select>
+        </label>
+        <label class="form-wide">Notes<textarea name="notes" rows="3" placeholder="What arose, what shifted…"></textarea></label>
+        <div class="form-wide">
+          <button class="btn btn-primary" type="submit">Save to journal</button>
+          <span id="session-msg" class="form-msg"></span>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <section class="studio-panel">
+    <h2>Session journal</h2>
+    <div id="sessions-list"></div>
+  </section>
+  </div><!-- /studio-content -->
+</main>
+
+<footer class="footer">
+  <span class="brand-mark">✦</span> Manifest — healing · art · stillness
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
