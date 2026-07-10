@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: manifest
+    runtime: python
+    plan: starter
+    buildCommand: "echo no dependencies to install"
+    startCommand: "python server.py"
+    healthCheckPath: /
+    disk:
+      name: manifest-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: STUDIO_PIN
+        sync: false
