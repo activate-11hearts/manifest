@@ -1,0 +1,200 @@
+﻿Diagnose log at 2026-07-10T22:29:33Z
+
+AppPath: C:\Program Files\Git\mingw64\bin\git-credential-manager.exe
+InstallDir: C:\Program Files\Git\mingw64\bin\
+Version: 2.8.0+d5e8a3442d48cc5efe7014e093e44242c0bd395f
+
+------------
+Diagnostic: Environment
+Skipped: False
+Success: True
+Exception: None
+Log:
+OSType: Windows
+OSVersion: 10.0 (build 26200)
+Reading environment variables... OK
+ Variables:
+OneDriveConsumer=C:\Users\deept\OneDrive
+ProgramFiles(x86)=C:\Program Files (x86)
+MSYSTEM=MINGW64
+ProgramW6432=C:\Program Files
+windir=C:\Windows
+PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+TMP=C:\Users\deept\AppData\Local\Temp
+PROCESSOR_ARCHITECTURE=AMD64
+NUMBER_OF_PROCESSORS=16
+BAGGAGE=sentry-environment=production,sentry-release=Claude%401.19367.0,sentry-public_key=2f98127cbffe4740b1f767a2de77d23b,sentry-trace_id=1bcdfc9b474e4b55aa25b3aa94753237,sentry-org_id=1158394
+ProgramData=C:\ProgramData
+PROCESSOR_REVISION=5000
+CLAUDE_CODE_OAUTH_SCOPES=user:inference user:file_upload user:profile user:sessions:claude_code
+USERPROFILE=C:\Users\deept
+CommonProgramFiles=C:\Program Files\Common Files
+NODE_USE_SYSTEM_CA=1
+TEMP=C:\Users\deept\AppData\Local\Temp
+FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer
+FPS_BROWSER_USER_PROFILE_STRING=Default
+LOGONSERVER=\\DESKTOP-9KA6CCQ
+TERM=xterm-256color
+USERNAME=deept
+CLAUDE_CODE_ENABLE_ASK_USER_QUESTION_TOOL=true
+CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_21216_LWMDZKYLJAXBSFNW
+GIT_EXEC_PATH=C:/Program Files/Git/mingw64/libexec/git-core
+PLINK_PROTOCOL=ssh
+NoDefaultCurrentDirectoryInExePath=1
+OneDrive=C:\Users\deept\OneDrive
+PATH=C:/Program Files/Git/mingw64/libexec/git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\deept\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files\Git\cmd;C:\Users\deept\AppData\Local\Programs\Python\Python314\Scripts\;C:\Users\deept\AppData\Local\Programs\Python\Python314\;C:\Users\deept\AppData\Local\Microsoft\WindowsApps;C:\Users\deept\AppData\Local\Programs\Python\Python314;C:\Users\deept\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\mingw64\bin
+USE_STAGING_OAUTH=
+CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+SystemRoot=C:\Windows
+PUBLIC=C:\Users\Public
+PROCESSOR_LEVEL=25
+SENTRY-TRACE=1bcdfc9b474e4b55aa25b3aa94753237-835816db67328e6b
+API_TIMEOUT_MS=900000
+LC_CTYPE=C.UTF-8
+AI_AGENT=claude-code_2-1-202_agent
+HOMEPATH=\Users\deept
+PSExecutionPolicyPreference=Bypass
+CLAUDE_CODE_EMIT_TOOL_USE_SUMMARIES=false
+ANTHROPIC_BASE_URL=https://api.anthropic.com
+ALLUSERSPROFILE=C:\ProgramData
+CommonProgramW6432=C:\Program Files\Common Files
+MCP_CONNECTION_NONBLOCKING=true
+CLAUDE_CODE_SDK_HAS_OAUTH_REFRESH=1
+GIT_EDITOR=true
+COREPACK_ENABLE_AUTO_PIN=0
+CLAUDE_CODE_CHILD_SESSION=1
+DriverData=C:\Windows\System32\Drivers\DriverData
+HOMEDRIVE=C:
+CLAUDE_CODE_DISABLE_CRON=
+GIT_TRACE2_PARENT_SID=f0d47b22-c0b8-43b9-9902-61da4ab7c3b4
+SystemDrive=C:
+CLAUDE_CODE_ENTRYPOINT=claude-desktop
+OS=Windows_NT
+ProgramFiles=C:\Program Files
+ComSpec="C:\Users\deept\AppData\Local\Programs\Python\Python314\python.exe"
+USERDOMAIN_ROAMINGPROFILE=DESKTOP-9KA6CCQ
+CLAUDE_CODE_SDK_HAS_HOST_AUTH_REFRESH=1
+PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+HOME=C:\Users\deept
+CLAUDE_AGENT_SDK_VERSION=0.3.202
+PSModulePath=C:\Users\deept\OneDrive\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\PowerShell\Modules\
+TMPDIR=C:\Users\deept\AppData\Local\Temp
+APPDATA=C:\Users\deept\AppData\Roaming
+USERDOMAIN=DESKTOP-9KA6CCQ
+COMPUTERNAME=DESKTOP-9KA6CCQ
+LOCALAPPDATA=C:\Users\deept\AppData\Local
+CLAUDE_CODE_SESSION_ID=e76fb190-7e5c-4c79-b418-dedcf6ce9ee9
+CLAUDECODE=1
+DISABLE_MICROCOMPACT=1
+USE_LOCAL_OAUTH=
+COLORTERM=truecolor
+DISABLE_AUTOUPDATER=1
+
+
+------------
+Diagnostic: File system
+Skipped: False
+Success: True
+Exception: None
+Log:
+Temporary directory is 'C:\Users\deept\AppData\Local\Temp\'...
+Checking basic file I/O...
+Writing to temporary file 'C:\Users\deept\AppData\Local\Temp\13ee4b54b7ed515180814e8e'... OK
+Reading from temporary file 'C:\Users\deept\AppData\Local\Temp\13ee4b54b7ed515180814e8e'... OK
+Deleting temporary file 'C:\Users\deept\AppData\Local\Temp\13ee4b54b7ed515180814e8e'... OK
+Testing IFileSystem instance...
+UserHomePath: C:\Users\deept
+UserDataDirectoryPath: C:\Users\deept\.gcm
+GetCurrentDirectory(): C:\Users\deept\Claude\Projects\Manifest
+
+------------
+Diagnostic: Networking
+Skipped: False
+Success: True
+Exception: None
+Log:
+Checking networking and HTTP stack...
+Creating HTTP client... OK
+IsNetworkAvailable: True
+Sending HEAD request to http://example.com... OK
+Sending HEAD request to https://example.com... OK
+Acquiring free TCP port... OK
+Testing local HTTP loopback connections...
+Creating new HTTP listener for http://localhost:60663/... OK
+Waiting for loopback connection... OK
+Writing response... OK
+Waiting for response data... OK
+Loopback connection data OK
+
+------------
+Diagnostic: Git
+Skipped: False
+Success: True
+Exception: None
+Log:
+Getting Git version... OK
+Git version is '2.55.0.windows.1'
+Locating current repository...Git repository at 'C:/Users/deept/Claude/Projects/Manifest/.git'
+ OK
+Listing all Git configuration... OK
+Git configuration:
+file:C:/Program Files/Git/etc/gitconfig	diff.astextplain.textconv=astextplain
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.clean=git-lfs clean -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.smudge=git-lfs smudge -- %f
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.process=git-lfs filter-process
+file:C:/Program Files/Git/etc/gitconfig	filter.lfs.required=true
+file:C:/Program Files/Git/etc/gitconfig	http.sslbackend=schannel
+file:C:/Program Files/Git/etc/gitconfig	core.autocrlf=true
+file:C:/Program Files/Git/etc/gitconfig	core.fscache=true
+file:C:/Program Files/Git/etc/gitconfig	core.symlinks=false
+file:C:/Program Files/Git/etc/gitconfig	pull.rebase=false
+file:C:/Program Files/Git/etc/gitconfig	credential.helper=manager
+file:C:/Program Files/Git/etc/gitconfig	credential.https://dev.azure.com.usehttppath=true
+file:C:/Program Files/Git/etc/gitconfig	init.defaultbranch=master
+file:C:/Users/deept/.gitconfig	user.name=Sandhya Deepthi Davu
+file:C:/Users/deept/.gitconfig	user.email=sandhyadavu11@gmail.com
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=false
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	core.symlinks=false
+file:.git/config	core.ignorecase=true
+file:.git/config	remote.origin.url=https://github.com/activate-11hearts/manifest.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+
+
+------------
+Diagnostic: Credential storage
+Skipped: False
+Success: True
+Exception: None
+Log:
+ICredentialStore instance is of type: CredentialStore
+Writing test credential... OK
+Reading test credential... OK
+Deleting test credential... OK
+
+------------
+Diagnostic: Microsoft authentication (AAD/MSA)
+Skipped: False
+Success: True
+Exception: None
+Log:
+Broker is not enabled.
+Flow type is: Auto
+Gathering MSAL token cache data... OK
+CacheDirectory: C:\Users\deept\AppData\Local\.IdentityService
+CacheFileName: msal.cache
+CacheFilePath: C:\Users\deept\AppData\Local\.IdentityService\msal.cache
+Creating cache helper... OK
+Verifying MSAL token cache persistence... OK
+
+------------
+Diagnostic: GitHub API
+Skipped: False
+Success: True
+Exception: None
+Log:
+Using 'https://github.com/' as API target.
+Querying '/meta' endpoint... OK
+

@@ -488,3 +488,132 @@ loadConfig().then(() => {
   loadMeditations();
   handleStripeReturn();
 });
+
+/* ============ celestial interaction layer ============ */
+
+const MOTION_OK = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+const FINE_POINTER = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+/* ---------- twinkling starfield ---------- */
+(function starfield() {
+  const canvas = document.getElementById("stars");
+  if (!canvas || !MOTION_OK) return;
+  const ctx = canvas.getContext("2d");
+  let stars = [];
+  let running = true;
+
+  function seed() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const count = Math.min(90, Math.floor((canvas.width * canvas.height) / 16000));
+    stars = Array.from({ length: count }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: 0.4 + Math.random() * 1.3,
+      phase: Math.random() * Math.PI * 2,
+      speed: 0.4 + Math.random() * 0.9,
+      hue: Math.random() < 0.25 ? "217, 171, 95" : "230, 225, 250",
+    }));
+  }
+
+  function frame(t) {
+    if (!running) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (const s of stars) {
+      const glow = 0.25 + 0.55 * (0.5 + 0.5 * Math.sin(s.phase + (t / 1000) * s.speed));
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${s.hue}, ${glow})`;
+      ctx.fill();
+    }
+    requestAnimationFrame(frame);
+  }
+
+  seed();
+  requestAnimationFrame(frame);
+  window.addEventListener("resize", seed);
+  document.addEventListener("visibilitychange", () => {
+    running = !document.hidden;
+    if (running) requestAnimationFrame(frame);
+  });
+})();
+
+/* ---------- aura parallax + cursor glow ---------- */
+if (MOTION_OK && FINE_POINTER) {
+  const auras = $$(".aura");
+  const cursorAura = $("#cursor-aura");
+  let mx = 0.5, my = 0.5, shown = false;
+
+  document.addEventListener("mousemove", (e) => {
+    mx = e.clientX / window.innerWidth - 0.5;
+    my = e.clientY / window.innerHeight - 0.5;
+    if (cursorAura) {
+      cursorAura.style.left = e.clientX + "px";
+      cursorAura.style.top = e.clientY + "px";
+      if (!shown) { cursorAura.style.opacity = "1"; shown = true; }
+    }
+  });
+
+  (function parallax() {
+    auras.forEach((a, i) => {
+      const depth = (i + 1) * 14;
+      a.style.translate = `${mx * depth}px ${my * depth}px`;
+    });
+    requestAnimationFrame(parallax);
+  })();
+}
+
+/* ---------- scroll reveals (auto-observes re-rendered content) ---------- */
+if (MOTION_OK && "IntersectionObserver" in window) {
+  const REVEAL_SELECTOR = ".home-card, .offer-card, .gallery-item, .meditation-item, .studio-panel, .empty-state, .booking";
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = `${(i % 6) * 70}ms`;
+          entry.target.classList.add("revealed");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  const attach = (root) => {
+    root.querySelectorAll(REVEAL_SELECTOR).forEach((el) => {
+      if (!el.classList.contains("reveal")) {
+        el.classList.add("reveal");
+        io.observe(el);
+      }
+    });
+  };
+
+  attach(document);
+  new MutationObserver((muts) => {
+    for (const m of muts) {
+      for (const node of m.addedNodes) {
+        if (node.nodeType === 1) attach(node.parentElement || node);
+      }
+    }
+  }).observe(document.body, { childList: true, subtree: true });
+}
+
+/* ---------- 3D tilt on cards ---------- */
+if (MOTION_OK && FINE_POINTER) {
+  document.addEventListener("mousemove", (e) => {
+    const card = e.target.closest(".home-card, .offer-card");
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width - 0.5;
+    const py = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(800px) rotateY(${px * 7}deg) rotateX(${py * -7}deg) translateY(-4px)`;
+  });
+  document.addEventListener(
+    "mouseout",
+    (e) => {
+      const card = e.target.closest(".home-card, .offer-card");
+      if (card && !card.contains(e.relatedTarget)) card.style.transform = "";
+    },
+    true
+  );
+}
