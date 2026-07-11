@@ -37,6 +37,7 @@
 <main id="view-home" class="view active">
   <section class="hero">
     <p class="hero-eyebrow">A sanctuary for body, eye, and breath</p>
+    <div id="crystal-stage" aria-hidden="true"></div>
     <h1>Healing, art &amp; stillness<br><em>in one place</em></h1>
     <p class="hero-sub">Manifest brings together Trinfinity8 energy sessions, original paintings,
     and guided meditations — three paths to the same quiet center.</p>
@@ -146,6 +147,14 @@
     <p class="page-lede">Each painting begins the way a session does — with stillness.
     Originals and prints are available; ask about any piece when you visit.</p>
   </section>
+  <section id="gallery3d" class="gallery3d" hidden>
+    <div id="gallery3d-stage"></div>
+    <div class="g3d-caption">
+      <span id="g3d-title" class="g3d-title">✦</span>
+      <span id="g3d-action" class="g3d-action"></span>
+    </div>
+    <p class="g3d-hint">drag or scroll to turn the gallery · click a painting to step inside it</p>
+  </section>
   <section id="gallery-grid" class="gallery-grid"></section>
   <div id="gallery-empty" class="empty-state" hidden>
     <div class="empty-icon">❋</div>
@@ -178,6 +187,16 @@
 
 <!-- payment result banner -->
 <div id="pay-banner" class="pay-banner" hidden></div>
+
+<!-- cinematic 3D painting viewer -->
+<div id="cinema" class="cinema" hidden>
+  <div id="cinema-stage"></div>
+  <button class="cinema-close" aria-label="Close">×</button>
+  <div class="cinema-info">
+    <h3 id="cinema-title"></h3>
+    <div id="cinema-action"></div>
+  </div>
+</div>
 
 <!-- lightbox -->
 <div id="lightbox" class="lightbox" hidden>
@@ -280,5 +299,7 @@
 </footer>
 
 <script src="app.js"></script>
+<script type="module" src="crystal.js"></script>
+<script type="module" src="gallery3d.js"></script>
 </body>
 </html>
