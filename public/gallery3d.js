@@ -87,25 +87,33 @@ function actionHTML(p) {
     frame.material.opacity = 0;
     group.add(frame, plane);
 
-    loader.load(encodeURI(p.url), (tex) => {
-      tex.colorSpace = THREE.SRGBColorSpace;
-      tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
-      const aspect = tex.image.width / tex.image.height;
-      const h = 2.5;
-      const w = Math.min(3.1, Math.max(1.5, h * aspect));
-      plane.geometry.dispose();
-      plane.geometry = new THREE.PlaneGeometry(w, h);
-      frame.geometry.dispose();
-      frame.geometry = new THREE.BoxGeometry(w + 0.2, h + 0.2, 0.1);
-      mat.map = tex;
-      mat.needsUpdate = true;
-      item.loaded = true; // fade in during the loop
-    });
-
     const item = { group, plane, frame, painting: p, index: i, loaded: false, hover: 0 };
     items.push(item);
     ring.add(group);
   });
+
+  // textures are heavy — load them only once the gallery is first opened
+  let texturesRequested = false;
+  function loadTextures() {
+    if (texturesRequested) return;
+    texturesRequested = true;
+    for (const item of items) {
+      loader.load(encodeURI(item.painting.url), (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
+        tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        const aspect = tex.image.width / tex.image.height;
+        const h = 2.5;
+        const w = Math.min(3.1, Math.max(1.5, h * aspect));
+        item.plane.geometry.dispose();
+        item.plane.geometry = new THREE.PlaneGeometry(w, h);
+        item.frame.geometry.dispose();
+        item.frame.geometry = new THREE.BoxGeometry(w + 0.2, h + 0.2, 0.1);
+        item.plane.material.map = tex;
+        item.plane.material.needsUpdate = true;
+        item.loaded = true; // fade in during the loop
+      });
+    }
+  }
 
   /* --- spin: auto + drag + wheel --- */
   let spin = 0;
@@ -172,7 +180,7 @@ function actionHTML(p) {
 
   function maybeRun() {
     const should = inView && !document.hidden;
-    if (should && !running) { running = true; resize(); requestAnimationFrame(frame); }
+    if (should && !running) { running = true; loadTextures(); resize(); requestAnimationFrame(frame); }
     else if (!should) running = false;
   }
 
