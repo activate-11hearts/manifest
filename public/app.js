@@ -489,6 +489,12 @@ loadConfig().then(() => {
   handleStripeReturn();
 });
 
+// deep links: /?view=gallery opens that section directly
+{
+  const wanted = new URLSearchParams(location.search).get("view");
+  if (wanted && document.getElementById(`view-${wanted}`)) showView(wanted);
+}
+
 /* ============ celestial interaction layer ============ */
 
 const MOTION_OK = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
