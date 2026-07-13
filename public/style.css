@@ -763,61 +763,6 @@ textarea { resize: vertical; }
 /* 3D gallery active → retire the 2D grid */
 body.gallery-3d .gallery-grid, body.gallery-3d #gallery-empty { display: none; }
 
-/* how-it-works 3D story */
-.t8how[hidden] { display: none; }
-
-.t8how { margin: 0 0 3rem; }
-
-.t8how-heading { text-align: center; margin-bottom: 1rem; }
-
-#t8-stage {
-  width: 100%;
-  height: min(52vh, 480px);
-  cursor: grab;
-  touch-action: pan-y;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.02);
-}
-
-#t8-stage:active { cursor: grabbing; }
-
-.t8-caption-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.9rem;
-  margin-top: 0.9rem;
-  min-height: 2.2rem;
-}
-
-.t8-caption {
-  font-size: 0.98rem;
-  color: var(--gold-bright);
-  text-align: center;
-  text-shadow: 0 0 18px var(--gold-glow);
-}
-
-.t8-dots { display: flex; justify-content: center; gap: 0.55rem; margin-top: 0.7rem; }
-
-.t8-dot {
-  width: 11px; height: 11px;
-  border-radius: 50%;
-  border: 1px solid rgba(217, 171, 95, 0.5);
-  background: transparent;
-  cursor: pointer;
-  padding: 0;
-  transition: all 0.25s ease;
-}
-
-.t8-dot:hover { border-color: var(--gold-bright); }
-
-.t8-dot.active {
-  background: var(--gold);
-  box-shadow: 0 0 12px var(--gold-glow);
-}
-
 /* cinematic viewer */
 .cinema[hidden] { display: none; }
 
