@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Experience — 11 Hearts Frequency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0b18;
+    --ink: #f4effa;
+    --ink-soft: #cfc4e2;
+    --gold: #d9ab5f;
+    --gold-soft: #f2d296;
+    --plum: #b48ac9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: auto; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Nunito Sans", system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* fixed 3D stage behind everything */
+  #stage { position: fixed; inset: 0; z-index: 0; }
+  #stage canvas { display: block; width: 100%; height: 100%; }
+
+  /* scroll runway that drives the journey */
+  #runway { height: 640vh; }
+
+  /* thin progress line */
+  #progress {
+    position: fixed; top: 0; left: 0; height: 2px; width: 0;
+    background: linear-gradient(90deg, var(--gold), var(--plum));
+    z-index: 3; opacity: 0.9;
+  }
+
+  /* story chapters — fixed, faded in/out by scroll position */
+  .chapter {
+    position: fixed; inset: 0; z-index: 2;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 6vh 8vw;
+    opacity: 0; pointer-events: none;
+  }
+  .eyebrow {
+    font-size: 0.78rem; letter-spacing: 0.42em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.1rem;
+  }
+  h1, h2 {
+    font-family: "Cormorant Garamond", serif; font-weight: 500;
+    text-shadow: 0 2px 30px rgba(13, 11, 24, 0.9);
+  }
+  h1 { font-size: clamp(2.6rem, 7vw, 5rem); line-height: 1.05; }
+  h2 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; }
+  h1 em, h2 em { font-style: italic; color: var(--gold-soft); }
+  .lede {
+    max-width: 34rem; margin-top: 1.2rem; font-weight: 300;
+    font-size: clamp(1rem, 2.2vw, 1.18rem); line-height: 1.7; color: var(--ink-soft);
+    text-shadow: 0 1px 18px rgba(13, 11, 24, 0.95);
+  }
+  .hint {
+    position: absolute; bottom: 5vh; left: 0; right: 0;
+    font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase;
+    color: var(--ink-soft); animation: drift 2.6s ease-in-out infinite;
+  }
+  @keyframes drift { 50% { transform: translateY(7px); opacity: 0.55; } }
+  @media (prefers-reduced-motion: reduce) { .hint { animation: none; } }
+
+  .actions { display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; }
+  .btn {
+    font-family: "Nunito Sans", sans-serif; font-weight: 600; font-size: 0.95rem;
+    padding: 0.9rem 2rem; border-radius: 999px; text-decoration: none;
+    letter-spacing: 0.04em; transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-primary {
+    color: #241a08; background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    box-shadow: 0 6px 30px rgba(217, 171, 95, 0.35);
+  }
+  .btn-ghost {
+    color: var(--ink); border: 1px solid rgba(244, 239, 250, 0.35);
+    background: rgba(13, 11, 24, 0.35); backdrop-filter: blur(6px);
+  }
+
+  /* no-WebGL fallback: the story simply stacks as a static page */
+  body.flat #stage, body.flat #progress, body.flat #runway, body.flat .hint { display: none; }
+  body.flat .chapter {
+    position: static; opacity: 1; pointer-events: auto;
+    min-height: 60vh; justify-content: center;
+  }
+  body.flat {
+    background:
+      radial-gradient(ellipse 70% 45% at 50% 0%, rgba(180, 138, 201, 0.16), transparent),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(217, 171, 95, 0.12), transparent),
+      var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<div id="stage" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<section class="chapter" data-from="0" data-to="0.10">
+  <p class="eyebrow">11 Hearts Frequency</p>
+  <h1>The <em>Experience</em></h1>
+  <p class="lede">An immersive journey through frequency, color, and light.</p>
+  <p class="hint">Scroll to begin ↓</p>
+</section>
+
+<section class="chapter" data-from="0.22" data-to="0.38">
+  <p class="eyebrow">Frequency</p>
+  <h2>Everything begins <em>as vibration</em></h2>
+  <p class="lede">Unseen currents of energy, moving through and around us —
+  waiting to be translated into form.</p>
+</section>
+
+<section class="chapter" data-from="0.44" data-to="0.58">
+  <p class="eyebrow">Resonance</p>
+  <h2>Eleven hearts, <em>one frequency</em></h2>
+  <p class="lede">A constellation of intention — each heart a doorway,
+  all of them opening toward the same quiet center.</p>
+</section>
+
+<section class="chapter" data-from="0.64" data-to="0.84">
+  <p class="eyebrow">The Paintings</p>
+  <h2>Frequency made <em>visible</em></h2>
+  <p class="lede">Each canvas is painted as a portal — color and movement
+  carrying its own signature, born from the codes it holds.</p>
+</section>
+
+<section class="chapter" data-from="0.92" data-to="1">
+  <p class="eyebrow">Arrival</p>
+  <h2>Begin your <em>journey</em></h2>
+  <p class="lede">Step through the doorway — in a session, or simply by
+  spending time with the work.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://www.11heartsfrequency.org/book-online" target="_top">Book a Session</a>
+    <a class="btn btn-ghost" href="https://www.11heartsfrequency.org" target="_top">Explore 11 Hearts Frequency</a>
+  </div>
+</section>
+
+<div id="runway" aria-hidden="true"></div>
+
+<script type="module" src="experience3d.js"></script>
+</body>
+</html>
