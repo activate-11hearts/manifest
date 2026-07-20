@@ -92,6 +92,27 @@ body {
   transition: opacity 0.6s ease;
 }
 
+/* ---------- hub bar (links across the three 11 Hearts properties) ---------- */
+.hubbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.45rem clamp(1rem, 5vw, 3.5rem);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  color: rgba(207, 196, 226, 0.75);
+  background: rgba(9, 8, 16, 0.6);
+  border-bottom: 1px solid rgba(217, 171, 95, 0.1);
+}
+.hubbar a {
+  color: rgba(207, 196, 226, 0.75);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.hubbar a:hover { color: var(--gold-bright); border-color: var(--gold-bright); }
+
 /* ---------- top bar ---------- */
 .topbar {
   display: flex;

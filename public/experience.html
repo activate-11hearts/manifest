@@ -86,6 +86,16 @@
     background: rgba(13, 11, 24, 0.35); backdrop-filter: blur(6px);
   }
 
+  .hub {
+    display: flex; align-items: center; gap: 0.7rem; margin-top: 1.6rem;
+    font-size: 0.85rem; color: var(--ink-soft);
+  }
+  .hub a {
+    color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .hub a:hover { color: var(--gold-soft); border-color: var(--gold-soft); }
+
   /* no-WebGL fallback: the story simply stacks as a static page */
   body.flat #stage, body.flat #progress, body.flat #runway, body.flat .hint { display: none; }
   body.flat .chapter {
@@ -142,6 +152,11 @@
     <a class="btn btn-primary" href="https://www.11heartsfrequency.org/book-online" target="_top">Book a Session</a>
     <a class="btn btn-ghost" href="https://www.11heartsfrequency.org" target="_top">Explore 11 Hearts Frequency</a>
   </div>
+  <nav class="hub" aria-label="More ways to explore">
+    <a href="https://app.11heartsfrequency.org?view=gallery" target="_top">Gallery &amp; Meditations</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://app.11heartsfrequency.org?view=trinfinity" target="_top">Trinfinity8 Sessions</a>
+  </nav>
 </section>
 
 <div id="runway" aria-hidden="true"></div>
