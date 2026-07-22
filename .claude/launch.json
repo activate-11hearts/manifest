@@ -5,7 +5,8 @@
       "name": "manifest",
       "runtimeExecutable": "python",
       "runtimeArgs": ["server.py"],
-      "port": 8748
+      "port": 8748,
+      "autoPort": true
     }
   ]
 }
